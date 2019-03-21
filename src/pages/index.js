@@ -11,8 +11,6 @@ const IndexPage = () => (
       lang="pl-PL"
       keywords={[`portfolio`, `Marcin Kołodziej`, "web", "developer"]}
     />
-    <h1>Hi people</h1>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 

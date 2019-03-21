@@ -1,3 +1,5 @@
+const spacingUnit = 8
+
 export default {
   colors: {
     primary: "#6320EE",
@@ -20,7 +22,6 @@ export default {
     md: "4px",
     lg: "8px",
   },
-  spacingUnit: 8,
   spaces: {
     xxs: `${spacingUnit / 2}px`,
     xs: `${spacingUnit}px`,

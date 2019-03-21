@@ -1,10 +1,14 @@
 import React from "react"
+import { ThemeProvider } from "styled-components"
 
 import GlobalStyles from "../GlobalStyles"
+import theme from "../theme"
 
 export default ({ children }) => (
-  <div>
-    <GlobalStyles />
-    {children}
-  </div>
+  <ThemeProvider theme={theme}>
+    <>
+      <GlobalStyles />
+      {children}
+    </>
+  </ThemeProvider>
 )
