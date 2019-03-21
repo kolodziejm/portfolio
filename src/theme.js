@@ -3,6 +3,8 @@ const spacingUnit = 8
 export default {
   colors: {
     primary: "#6320EE",
+    black: "#000",
+    shadow: "#BEBEBE",
   },
   fonts: {
     heading: "Montserrat, sans-serif",
@@ -14,7 +16,7 @@ export default {
     md: "2rem",
     l: "2.56rem",
     xl: "3.84rem",
-    xxl: "4.8rem",
+    xxl: "6.4rem",
     hg: "9.6rem",
   },
   borderRadiuses: {
