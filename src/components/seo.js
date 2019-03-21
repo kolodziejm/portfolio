@@ -33,7 +33,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s`}
       meta={[
         {
           name: `description`,
@@ -77,7 +77,12 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
-    />
+    >
+      <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:300,700|Roboto"
+        rel="stylesheet"
+      />
+    </Helmet>
   )
 }
 

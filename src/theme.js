@@ -1,0 +1,39 @@
+export default {
+  colors: {
+    primary: "#6320EE",
+  },
+  fonts: {
+    heading: "Montserrat, sans-serif",
+    body: "Roboto, sans-serif",
+  },
+  fontSizes: {
+    xs: "1.25rem",
+    sm: "1.6rem",
+    md: "2rem",
+    l: "2.56rem",
+    xl: "3.84rem",
+    xxl: "4.8rem",
+    hg: "9.6rem",
+  },
+  borderRadiuses: {
+    sm: "2px",
+    md: "4px",
+    lg: "8px",
+  },
+  spacingUnit: 8,
+  spaces: {
+    xxs: `${spacingUnit / 2}px`,
+    xs: `${spacingUnit}px`,
+    sm: `${spacingUnit * 2}px`,
+    md: `${spacingUnit * 3}px`,
+    lg: `${spacingUnit * 4}px`,
+    xl: `${spacingUnit * 5}px`,
+    xxl: `${spacingUnit * 6}px`,
+    hg: `${spacingUnit * 8}px`,
+  },
+  breakpoints: {
+    tabPort: "37.5em", // 600px
+    tabLand: "56.25em", // 900px
+    desktop: "75em", // 1200px
+  },
+}
