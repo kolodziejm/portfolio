@@ -17,6 +17,7 @@ import SectionTitle from "../components/typography/SectionTitle"
 import Main from "../components/sections/Main"
 import Paragraph from "../components/typography/Paragraph"
 import Section from "../components/sections/Section"
+import Content from "../components/helpers/Content"
 
 const HeaderContent = styled.div`
   position: absolute;
@@ -52,20 +53,24 @@ const IndexPage = () => {
       </Header>
       <Main>
         <Section>
-          <SectionTitle>O mnie</SectionTitle>
-          <Paragraph margin={`0 0 ${spaces.md} 0`}>
-            Tworzenie oprogramowania to moja pasja, którą z przyjemnością
-            rozwijam każdego dnia poprzez budowanie aplikacji oraz naukę nowych
-            technologii.
-          </Paragraph>
-          <Paragraph>
-            Specjalizuję się w technologiach front-endowych, jednak w trakcie
-            tworzenia aplikacji poznałem również technologie back-endowe oraz
-            dobre praktyki związane z UI / UX
-          </Paragraph>
+          <Content>
+            <SectionTitle>O mnie</SectionTitle>
+            <Paragraph margin={`0 0 ${spaces.md} 0`}>
+              Tworzenie oprogramowania to moja pasja, którą z przyjemnością
+              rozwijam każdego dnia poprzez budowanie aplikacji oraz naukę
+              nowych technologii.
+            </Paragraph>
+            <Paragraph>
+              Specjalizuję się w technologiach front-endowych, jednak w trakcie
+              tworzenia aplikacji poznałem również technologie back-endowe oraz
+              dobre praktyki związane z UI / UX
+            </Paragraph>
+          </Content>
         </Section>
         <Section>
-          <SectionTitle>Umiejętności</SectionTitle>
+          <Content>
+            <SectionTitle>Umiejętności</SectionTitle>
+          </Content>
         </Section>
       </Main>
     </Layout>

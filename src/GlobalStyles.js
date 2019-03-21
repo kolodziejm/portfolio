@@ -22,6 +22,11 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.25;
     font-kerning: normal;
   }
+
+  ::selection {
+    background: ${({ theme: { colors } }) => colors.primary};
+    color: ${({ theme: { colors } }) => colors.white};
+  }
 `
 
 export default GlobalStyles
