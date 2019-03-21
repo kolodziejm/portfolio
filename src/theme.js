@@ -4,6 +4,7 @@ export default {
   colors: {
     primary: "#6320EE",
     black: "#000",
+    white: "#FFF",
     shadow: "#BEBEBE",
   },
   fonts: {
@@ -14,7 +15,7 @@ export default {
     xs: "1.25rem",
     sm: "1.6rem",
     md: "2rem",
-    l: "2.56rem",
+    lg: "2.56rem",
     xl: "3.84rem",
     xxl: "6.4rem",
     hg: "9.6rem",
@@ -24,6 +25,7 @@ export default {
     md: "4px",
     lg: "8px",
   },
+  spacingUnit,
   spaces: {
     xxs: `${spacingUnit / 2}px`,
     xs: `${spacingUnit}px`,
