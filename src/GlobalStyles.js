@@ -14,9 +14,13 @@ const GlobalStyles = createGlobalStyle`
     /* font-size: 90%; */
   }
 
+  body, #___gatsby {
+    height: 100%;
+  }
+
   body {
     font-family: 'Roboto', sans-serif;
-    color: #555;
+    color: ${({ theme: { colors } }) => colors.body};
     box-sizing: border-box;
     overflow-x: hidden;
     line-height: 1.25;

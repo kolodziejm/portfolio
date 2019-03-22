@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
@@ -18,6 +18,8 @@ import Main from "../components/sections/Main"
 import Paragraph from "../components/typography/Paragraph"
 import Section from "../components/sections/Section"
 import Content from "../components/helpers/Content"
+import { HamburgerOpen } from "../components/ui/Hamburger"
+import { MobileItem, MobileMenu } from "../components/ui/MobileMenu"
 
 const HeaderContent = styled.div`
   position: absolute;
@@ -29,6 +31,8 @@ const HeaderContent = styled.div`
 const { spaces } = theme
 
 const IndexPage = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <Layout>
       <SEO
@@ -36,7 +40,14 @@ const IndexPage = () => {
         lang="pl-PL"
         keywords={[`portfolio`, `Marcin Kołodziej`, "web", "developer"]}
       />
-      <Header>
+      <MobileMenu open={menuOpen} clicked={() => setMenuOpen(false)}>
+        <MobileItem href="about">O mnie</MobileItem>
+        <MobileItem>Umiejętności</MobileItem>
+        <MobileItem>Projekty</MobileItem>
+        <MobileItem>Kontakt</MobileItem>
+      </MobileMenu>
+      <Header id="header">
+        <HamburgerOpen clicked={() => setMenuOpen(true)} />
         <HeaderContent>
           <HeaderGroup margin={`0 0 ${spaces.md} 0`}>
             <MainHeader margin={`0 0 ${spaces.sm} 0`}>
@@ -52,7 +63,7 @@ const IndexPage = () => {
         </HeaderContent>
       </Header>
       <Main>
-        <Section>
+        <Section id="about">
           <Content>
             <SectionTitle>O mnie</SectionTitle>
             <Paragraph margin={`0 0 ${spaces.md} 0`}>

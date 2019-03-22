@@ -5,7 +5,9 @@ export default {
     primary: "#6320EE",
     black: "#000",
     white: "#FFF",
+    light: "#FAFAFA",
     shadow: "#BEBEBE",
+    body: "#555",
   },
   fonts: {
     heading: "Montserrat, sans-serif",
