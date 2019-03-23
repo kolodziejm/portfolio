@@ -6,8 +6,9 @@ import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import theme from "../theme"
 
-import Header from "../components/sections/Header"
+import logoImg from '../images/MK.png';
 
+import Header from "../components/sections/Header"
 import MainHeader from "../components/typography/MainHeader"
 import SecondaryHeader from "../components/typography/SecondaryHeader"
 import HeaderGroup from "../components/helpers/HeaderGroup"
@@ -41,10 +42,13 @@ const IndexPage = () => {
         keywords={[`portfolio`, `Marcin Kołodziej`, "web", "developer"]}
       />
       <MobileMenu open={menuOpen} clicked={() => setMenuOpen(false)}>
-        <MobileItem href="about">O mnie</MobileItem>
-        <MobileItem>Umiejętności</MobileItem>
-        <MobileItem>Projekty</MobileItem>
-        <MobileItem>Kontakt</MobileItem>
+        <MobileItem href="#header" clicked={() => setMenuOpen(false)}>
+          <img width={40} height={40} src={logoImg} alt="Marcin Kołodziej"/>
+        </MobileItem>
+        <MobileItem href="#about" clicked={() => setMenuOpen(false)}>O mnie</MobileItem>
+        <MobileItem href="#skills" clicked={() => setMenuOpen(false)}>Umiejętności</MobileItem>
+        <MobileItem href="#projects" clicked={() => setMenuOpen(false)}>Projekty</MobileItem>
+        <MobileItem href="#contact" clicked={() => setMenuOpen(false)}>Kontakt</MobileItem>
       </MobileMenu>
       <Header id="header">
         <HamburgerOpen clicked={() => setMenuOpen(true)} />
@@ -78,7 +82,7 @@ const IndexPage = () => {
             </Paragraph>
           </Content>
         </Section>
-        <Section>
+        <Section id="skills">
           <Content>
             <SectionTitle>Umiejętności</SectionTitle>
           </Content>

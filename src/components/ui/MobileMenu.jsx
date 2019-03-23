@@ -55,8 +55,8 @@ const Anchor = styled.a`
   color: inherit;
 `
 
-export const MobileItem = ({ href, children }) => (
-  <Item>
+export const MobileItem = ({ href, children, clicked }) => (
+  <Item onClick={clicked}>
     <Anchor href={href}>{children}</Anchor>
   </Item>
 )
