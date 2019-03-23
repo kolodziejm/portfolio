@@ -22,7 +22,7 @@ const Image = styled.img`
   margin-bottom: ${({ theme: { spaces } }) => spaces.xxs};
 `;
 
-export default ({ img, alt, text }) => (
+export default ({ img, text }) => (
   <Item>
     <Image src={img} alt={`${text} icon`}/>
     <Paragraph small >

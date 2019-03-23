@@ -118,7 +118,7 @@ const IndexPage = () => {
             <MediumHeading align="center">Kontrola wersji</MediumHeading>
             <SmallCard img={gitIcon} text="Git" />
             <MediumHeading align="center">Testy</MediumHeading>
-            <SmallCard img={jestIcon} text="jest" />
+            <SmallCard img={jestIcon} text="Jest" />
             <SmallCard img={rtlIcon} text="RTL" />
           </Content>
         </Section>
