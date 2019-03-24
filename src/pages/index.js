@@ -102,7 +102,7 @@ const IndexPage = () => {
         <Section id="skills">
           <Content>
             <SectionTitle>Umiejętności</SectionTitle>
-            <MediumHeading align="center">Front-end</MediumHeading>
+            <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`} >Front-end</MediumHeading>
             <SmallCard img={jsIcon} text="JavaScript ES6+" />
             <SmallCard img={reactIcon} text="React" />
             <SmallCard img={reduxIcon} text="Redux" />
@@ -110,14 +110,14 @@ const IndexPage = () => {
             <SmallCard img={css3Icon} text="CSS3" />
             <SmallCard img={sassIcon} text="Sass" />
             <SmallCard img={graphqlIcon} text="GraphQL" />
-            <MediumHeading align="center">Back-end</MediumHeading>
+            <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>Back-end</MediumHeading>
             <SmallCard img={nodeIcon} text="Node.js" />
             <SmallCard img={mongodbIcon} text="MongoDB" />
             <SmallCard img={graphqlIcon} text="GraphQL" />
             <SmallCard img={firebaseIcon} text="Firebase" />
-            <MediumHeading align="center">Kontrola wersji</MediumHeading>
+            <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>Kontrola wersji</MediumHeading>
             <SmallCard img={gitIcon} text="Git" />
-            <MediumHeading align="center">Testy</MediumHeading>
+            <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>Testy</MediumHeading>
             <SmallCard img={jestIcon} text="Jest" />
             <SmallCard img={rtlIcon} text="RTL" />
           </Content>
