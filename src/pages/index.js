@@ -41,6 +41,7 @@ import MediumHeading from '../components/typography/MediumHeading';
 import GridList from '../components/lists/GridList';
 import FlexList from '../components/lists/FlexList';
 import Spacer from '../components/helpers/Spacer';
+import Project from '../components/ui/Project';
 
 const HeaderContent = styled.div`
   position: absolute;
@@ -133,10 +134,49 @@ const IndexPage = () => {
             </ul>
             </Spacer>
             <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>Testy</MediumHeading>
+            <Spacer margin={`0 0 ${spaces.lg} 0`}>
             <FlexList>
               <SmallCard img={jestIcon} text="Jest" flex="auto" margin={`0 ${spaces.sm} 0 0 `} />
               <SmallCard img={rtlIcon} text="RTL" flex="auto"  />
             </FlexList>
+            </Spacer>
+          </Content>
+        </Section>
+        <Section id="projects">
+          <Content>
+            <SectionTitle>Projekty</SectionTitle>
+            <Project 
+              title="Habit Creator"
+              frontendTech={['React', 'Redux', 'Material UI']}
+              backendTech={['Node.js (express)', 'MongoDB']}
+              github="https://github.com/kolodziejm/habit-creator"
+              live="https://habit-creator.cf/#/"
+            />
+            <Project 
+              title="liteNote"
+              frontendTech={['React (hooks)', 'Apollo Client', 'styled-components']}
+              backendTech={['Node.js (express)', 'Apollo Server', 'MongoDB']}
+              github="https://github.com/kolodziejm/liteNote"
+              live="https://litenote.ga/#/"
+            />
+            <Project 
+              title="Blog"
+              frontendTech={['GatsbyJS', 'React', 'styled-components', 'GraphQL']}
+              github="https://github.com/kolodziejm/blog"
+              live="https://www.kolomar.com/"
+            />
+            <Project 
+              title="Challenge #37"
+              frontendTech={['HTML5', 'CSS3', 'JavaScript', 'Sass']}
+              github="https://github.com/kolodziejm/challenge-37"
+              live="https://kolodziejm.github.io/challenge-37/"
+            />
+            <Project 
+              title="Challenge #2"
+              frontendTech={['HTML5', 'CSS3', 'JavaScript', 'Sass']}
+              github="https://github.com/kolodziejm/challenge-2"
+              live="https://kolodziejm.github.io/challenge-2/"
+            />
           </Content>
         </Section>
       </Main>
