@@ -38,6 +38,9 @@ import { HamburgerOpen } from "../components/ui/Hamburger"
 import { MobileItem, MobileMenu } from "../components/ui/MobileMenu"
 import SmallCard from '../components/ui/SmallCard';
 import MediumHeading from '../components/typography/MediumHeading';
+import GridList from '../components/lists/GridList';
+import FlexList from '../components/lists/FlexList';
+import Spacer from '../components/helpers/Spacer';
 
 const HeaderContent = styled.div`
   position: absolute;
@@ -102,24 +105,38 @@ const IndexPage = () => {
         <Section id="skills">
           <Content>
             <SectionTitle>Umiejętności</SectionTitle>
-            <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`} >Front-end</MediumHeading>
-            <SmallCard img={jsIcon} text="JavaScript ES6+" />
-            <SmallCard img={reactIcon} text="React" />
-            <SmallCard img={reduxIcon} text="Redux" />
-            <SmallCard img={html5Icon} text="HTML5" />
-            <SmallCard img={css3Icon} text="CSS3" />
-            <SmallCard img={sassIcon} text="Sass" />
-            <SmallCard img={graphqlIcon} text="GraphQL" />
-            <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>Back-end</MediumHeading>
-            <SmallCard img={nodeIcon} text="Node.js" />
-            <SmallCard img={mongodbIcon} text="MongoDB" />
-            <SmallCard img={graphqlIcon} text="GraphQL" />
-            <SmallCard img={firebaseIcon} text="Firebase" />
-            <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>Kontrola wersji</MediumHeading>
-            <SmallCard img={gitIcon} text="Git" />
-            <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>Testy</MediumHeading>
-            <SmallCard img={jestIcon} text="Jest" />
-            <SmallCard img={rtlIcon} text="RTL" />
+            <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`} >Front-end</MediumHeading>
+            <Spacer margin={`0 0 ${spaces.xl} 0`}>
+            <GridList columns={3} rows={3} minWidth="5rem" maxWidth="8rem" >
+              <SmallCard img={jsIcon} text="JavaScript ES6+" />
+              <SmallCard img={reactIcon} text="React" />
+              <SmallCard img={reduxIcon} text="Redux" />
+              <SmallCard img={html5Icon} text="HTML5" />
+              <SmallCard img={css3Icon} text="CSS3" />
+              <SmallCard img={sassIcon} text="Sass" />
+              <SmallCard img={graphqlIcon} text="GraphQL" centerGrid />
+            </GridList>
+            </Spacer>
+            <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>Back-end</MediumHeading>
+            <Spacer margin={`0 0 ${spaces.xl} 0`}>
+            <GridList columns={3} rows={2} minWidth="5rem" maxWidth="8rem">
+              <SmallCard img={nodeIcon} text="Node.js" />
+              <SmallCard img={mongodbIcon} text="MongoDB" />
+              <SmallCard img={graphqlIcon} text="GraphQL" />
+              <SmallCard img={firebaseIcon} text="Firebase" centerGrid />
+            </GridList>
+            </Spacer>
+            <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>Kontrola wersji</MediumHeading>
+            <Spacer margin={`0 0 ${spaces.xl} 0`}>
+            <ul style={{ listStyle: 'none', width: '100%' }}>
+              <SmallCard img={gitIcon} text="Git" margin="0 auto" />
+            </ul>
+            </Spacer>
+            <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>Testy</MediumHeading>
+            <FlexList>
+              <SmallCard img={jestIcon} text="Jest" flex="auto" margin={`0 ${spaces.sm} 0 0 `} />
+              <SmallCard img={rtlIcon} text="RTL" flex="auto"  />
+            </FlexList>
           </Content>
         </Section>
       </Main>

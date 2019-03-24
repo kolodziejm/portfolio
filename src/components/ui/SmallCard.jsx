@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Paragraph from '../typography/Paragraph';
 
@@ -14,6 +14,9 @@ const Item = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  grid-column: ${({ centerGrid }) => centerGrid ? '2 / 3' : 'auto'};
+  margin: ${({ margin }) => margin};
+  flex: ${({ flex }) => flex};
 `;
 
 const Image = styled.img`
@@ -22,8 +25,8 @@ const Image = styled.img`
   margin-bottom: ${({ theme: { spaces } }) => spaces.xxs};
 `;
 
-export default ({ img, text }) => (
-  <Item>
+export default ({ img, text, centerGrid, margin, flex }) => (
+  <Item centerGrid={centerGrid} margin={margin} flex={flex}>
     <Image src={img} alt={`${text} icon`}/>
     <Paragraph small >
       {text}

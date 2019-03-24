@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: ${({ theme: { spaces } }) => spaces.md};
+  margin-bottom: ${({ theme: { spaces } }) => spaces.lg};
 `
 
 export default ({ children }) => (
