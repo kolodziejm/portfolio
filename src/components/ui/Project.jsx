@@ -8,15 +8,19 @@ import Paragraph from '../typography/Paragraph';
 import { ButtonLink } from '../ui/Button';
 
 const TechList = styled.ul`
-  
+  list-style: none;
 `;
 
 const TechItem = styled.li`
-  margin-left: ${({ theme: { spaces } }) => spaces.sm};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Container = styled.div`
-  margin: ${({ theme: { spaces } }) => `0 0 ${spaces.sm} 0`};
+  margin: ${({ theme: { spaces } }) => `0 auto ${spaces.md} auto`};
+  max-width: 25rem;
+  text-align: center;
 `;
 
 const LinksContainer = styled.div`
@@ -24,18 +28,19 @@ const LinksContainer = styled.div`
   justify-content: center;
 `;
 
-// max-width inside BigCard
-const Content = styled.div` 
-
+const Image = styled.img`
+  width: 100%;
+  border-radius: ${({ theme: { borderRadiuses } }) => borderRadiuses.md};
+  margin-bottom: ${({ theme: { spaces } }) => spaces.xs};
 `;
 
 export default ({ title, img, frontendTech = [], backendTech = [], github, live }) => (
-    <BigCard>
-      <MediumHeading align="center">{title}</MediumHeading>
-      <img src={img} alt={title}/>
+    <BigCard maxWidth="45rem">
+      <Image src={img} alt={title}/>
+      <MediumHeading align="center" margin="0 0 16px 0" >{title}</MediumHeading>
       {frontendTech.length ? (
         <Container>
-          <SmallHeading>Front-end</SmallHeading>
+          <SmallHeading margin="0 0 8px 0">Front-end</SmallHeading>
           <TechList>
             {frontendTech.map(name => (
               <TechItem key={name}>
@@ -46,8 +51,8 @@ export default ({ title, img, frontendTech = [], backendTech = [], github, live 
         </Container>
       ) : null}
        {backendTech.length ? (
-        <>
-          <SmallHeading>Back-end</SmallHeading>
+        <Container>
+          <SmallHeading margin="0 0 8px 0">Back-end</SmallHeading>
           <TechList>
             {backendTech.map(name => (
               <TechItem key={name}>
@@ -55,7 +60,7 @@ export default ({ title, img, frontendTech = [], backendTech = [], github, live 
               </TechItem>
             ))}
           </TechList>
-        </>
+        </Container>
       ) : null}
       <LinksContainer>
           <ButtonLink 

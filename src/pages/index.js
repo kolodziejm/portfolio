@@ -22,6 +22,11 @@ import reactIcon from '../images/react.svg';
 import reduxIcon from '../images/redux.svg';
 import rtlIcon from '../images/rtl.png';
 import sassIcon from '../images/sass.svg';
+import agency from '../images/agency.png';
+import cahee from '../images/cahee.png';
+import habitCreator from '../images/habit-creator.png';
+import kolomar from '../images/kolomar.png';
+import litenote from '../images/litenote.png';
 
 import Header from "../components/sections/Header"
 import MainHeader from "../components/typography/MainHeader"
@@ -147,6 +152,7 @@ const IndexPage = () => {
             <SectionTitle>Projekty</SectionTitle>
             <Project 
               title="Habit Creator"
+              img={habitCreator}
               frontendTech={['React', 'Redux', 'Material UI']}
               backendTech={['Node.js (express)', 'MongoDB']}
               github="https://github.com/kolodziejm/habit-creator"
@@ -154,6 +160,7 @@ const IndexPage = () => {
             />
             <Project 
               title="liteNote"
+              img={litenote}
               frontendTech={['React (hooks)', 'Apollo Client', 'styled-components']}
               backendTech={['Node.js (express)', 'Apollo Server', 'MongoDB']}
               github="https://github.com/kolodziejm/liteNote"
@@ -161,18 +168,21 @@ const IndexPage = () => {
             />
             <Project 
               title="Blog"
+              img={kolomar}
               frontendTech={['GatsbyJS', 'React', 'styled-components', 'GraphQL']}
               github="https://github.com/kolodziejm/blog"
               live="https://www.kolomar.com/"
             />
             <Project 
               title="Challenge #37"
+              img={agency}
               frontendTech={['HTML5', 'CSS3', 'JavaScript', 'Sass']}
               github="https://github.com/kolodziejm/challenge-37"
               live="https://kolodziejm.github.io/challenge-37/"
             />
             <Project 
               title="Challenge #2"
+              img={cahee}
               frontendTech={['HTML5', 'CSS3', 'JavaScript', 'Sass']}
               github="https://github.com/kolodziejm/challenge-2"
               live="https://kolodziejm.github.io/challenge-2/"
