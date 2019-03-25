@@ -30,10 +30,11 @@ import litenote from '../images/litenote.png';
 
 import Header from "../components/sections/Header"
 import MainHeader from "../components/typography/MainHeader"
+import Label from '../components/typography/Label';
 import SecondaryHeader from "../components/typography/SecondaryHeader"
 import HeaderGroup from "../components/helpers/HeaderGroup"
 import Colorize from "../components/helpers/Colorize"
-import { ButtonLink } from "../components/ui/Button"
+import { ButtonLink, Button } from "../components/ui/Button"
 import SectionTitle from "../components/typography/SectionTitle"
 import Main from "../components/sections/Main"
 import Paragraph from "../components/typography/Paragraph"
@@ -47,6 +48,9 @@ import GridList from '../components/lists/GridList';
 import FlexList from '../components/lists/FlexList';
 import Spacer from '../components/helpers/Spacer';
 import Project from '../components/ui/Project';
+import Input from '../components/ui/Input';
+import Textarea from '../components/ui/Textarea';
+import Form from '../components/ui/Form';
 
 const HeaderContent = styled.div`
   position: absolute;
@@ -187,6 +191,18 @@ const IndexPage = () => {
               github="https://github.com/kolodziejm/challenge-2"
               live="https://kolodziejm.github.io/challenge-2/"
             />
+          </Content>
+        </Section>
+        <Section id="contact">
+          <Content>
+            <SectionTitle>Skontaktuj się ze mną</SectionTitle>
+            <Form action="POST" maxWidth="64rem">
+              <Label margin={`0 0 ${spaces.xs} 0`} htmlFor="email">Twój email</Label>
+              <Input type="email" name="email" id="email" margin={`0 0 ${spaces.md} 0`} />
+              <Label margin={`0 0 ${spaces.xs} 0`} htmlFor="message">Wiadomość</Label>
+              <Textarea id="message" name="message" margin={`0 0 ${spaces.sm} 0`} />
+              <Button type="submit" width="100%" >Wyślij</Button>
+            </Form>
           </Content>
         </Section>
       </Main>

@@ -24,6 +24,7 @@ const Container = styled.div`
 `;
 
 const LinksContainer = styled.div`
+  margin-top: ${({ theme: { spaces } }) => spaces.xl};
   display: flex;
   justify-content: center;
 `;

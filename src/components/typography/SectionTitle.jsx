@@ -9,6 +9,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: ${({ theme: { spaces } }) => spaces.lg};
+  text-align: center;
 `
 
 export default ({ children }) => (
