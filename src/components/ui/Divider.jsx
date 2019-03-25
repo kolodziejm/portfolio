@@ -7,4 +7,5 @@ export default styled.hr`
   height: 5px;
   background-color: ${({ theme: { colors } }) => colors.primary};
   border-radius: 50px;
+  margin: ${({ margin }) => margin};
 `
