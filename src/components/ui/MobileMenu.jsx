@@ -48,7 +48,7 @@ const Item = styled(posed.li(itemPoses))`
   font-weight: 700;
   color: ${({ theme: { colors } }) => colors.black};
   &:not(:last-child) {
-    margin-bottom: ${({ theme: { spaces } }) => spaces.hg};
+    margin-bottom: ${({ theme: { spaces } }) => spaces.xxl};
   }
 `
 
@@ -73,8 +73,8 @@ const MobileMenu = ({ open, clicked, lang, theme: { borderRadiuses } }) => (
             <MobileItem href="#header" clicked={clicked}>
               <img
                 style={{ borderRadius: `${borderRadiuses.sm}` }}
-                width={40}
-                height={40}
+                width={32}
+                height={32}
                 src={logoImg}
                 alt="Marcin Kołodziej"
               />
@@ -90,6 +90,9 @@ const MobileMenu = ({ open, clicked, lang, theme: { borderRadiuses } }) => (
             </MobileItem>
             <MobileItem href="#contact" clicked={clicked}>
               Kontakt
+            </MobileItem>
+            <MobileItem href="#contact" clicked={clicked}>
+              EN
             </MobileItem>
           </NavList>
         </Nav>
