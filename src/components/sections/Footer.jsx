@@ -26,12 +26,16 @@ const Footer = styled.footer`
 const SocialList = styled.ul`
   list-style: none;
   display: flex;
+  margin-bottom: ${({ theme: { spaces } }) => spaces.sm};
+
+  @media only screen and (min-width: ${({ theme: { breakpoints } }) => breakpoints.tabPort}) {
+    margin-bottom: 0;
+  }
 `;
 
 const SocialItem = styled.li`
   list-style: none;
   width: 3.2rem;
-  height: 3.2rem;
   cursor: pointer;
   margin: ${({ margin }) => margin};
 `;
@@ -52,7 +56,7 @@ export default () => (
   <Footer>
     <SocialList>
       <Link 
-      margin="0 16px 16px 0" 
+      margin="0 16px 0 0" 
       href="https://github.com/kolodziejm" 
       src={githubIcon} 
       alt="Github" />
