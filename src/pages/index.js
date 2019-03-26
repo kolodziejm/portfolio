@@ -248,13 +248,13 @@ const IndexPage = () => {
             <MediumHeading 
             align="center"
             margin={`0 0 ${spaces.xs} 0`}>Mój email</MediumHeading>
-            <a 
-            href="mailto:markolo.dev@gmail.com" 
-            style={{ textDecoration: 'none', textAlign: 'center' }}>
-              <MediumHeading>
+              <MediumHeading align="center">
+              <a 
+              href="mailto:markolo.dev@gmail.com" 
+              style={{ textDecoration: 'none', textAlign: 'center' }}>
                 <Colorize color="primary">markolo.dev@gmail.com</Colorize>
+              </a>
               </MediumHeading>
-            </a>
           </Content>
         </Section>
       </Main>
