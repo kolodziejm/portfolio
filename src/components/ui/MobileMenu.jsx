@@ -1,8 +1,10 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { withTheme } from "styled-components"
 import posed, { PoseGroup } from "react-pose"
 
 import { HamburgerClose } from "./Hamburger"
+
+import logoImg from '../../images/MK.png';
 
 const navPoses = {
   enter: { x: "0%", opacity: 1, staggerChildren: 100 },
@@ -61,15 +63,39 @@ export const MobileItem = ({ href, children, clicked }) => (
   </Item>
 )
 
-export const MobileMenu = ({ open, clicked, children }) => (
+const MobileMenu = ({ open, clicked, lang, theme: { borderRadiuses } }) => (
   <PoseGroup>
     {open && (
       <Backdrop key="backdrop">
         <HamburgerClose clicked={clicked} />
         <Nav>
-          <NavList>{children}</NavList>
+          <NavList>
+            <MobileItem href="#header" clicked={clicked}>
+              <img
+                style={{ borderRadius: `${borderRadiuses.sm}` }}
+                width={40}
+                height={40}
+                src={logoImg}
+                alt="Marcin Kołodziej"
+              />
+            </MobileItem>
+            <MobileItem href="#about" clicked={clicked}>
+              O mnie
+            </MobileItem>
+            <MobileItem href="#skills" clicked={clicked}>
+              Umiejętności
+            </MobileItem>
+            <MobileItem href="#projects" clicked={clicked}>
+              Projekty
+            </MobileItem>
+            <MobileItem href="#contact" clicked={clicked}>
+              Kontakt
+            </MobileItem>
+          </NavList>
         </Nav>
       </Backdrop>
     )}
   </PoseGroup>
 )
+
+export default withTheme(MobileMenu);
