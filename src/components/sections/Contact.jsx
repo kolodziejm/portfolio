@@ -78,7 +78,7 @@ const Contact = ({ theme, lang }) => {
               </a>
               </MediumHeading>
           </Content>
-        </Section>
+    </Section>
   )
 }
 

@@ -55,6 +55,7 @@ import Form from '../components/ui/Form';
 import SmallHeading from "../components/typography/SmallHeading";
 import Footer from '../components/sections/Footer';
 import Contact from "../components/sections/Contact";
+import About from '../components/sections/About';
 
 const HeaderContent = styled.div`
   position: absolute;
@@ -67,25 +68,6 @@ const { spaces, borderRadiuses } = theme
 
 const IndexPage = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  // const [email, setEmail] = useState('');
-  // const [message, setMessage] = useState('');
-
-  // const sendMessage = e => {
-  //   e.preventDefault();
-  //   const data = {
-  //     email,
-  //     message
-  //   };
-  //   fetch(firebaseURI, {
-  //     method: 'POST',
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify(data)
-  //   })
-  //     .then(res => console.log(res))
-  //     .catch(err => console.log(err))
-  // }
 
   return (
     <Layout>
@@ -120,21 +102,7 @@ const IndexPage = () => {
         </HeaderContent>
       </Header>
       <Main>
-        <Section id="about">
-          <Content>
-            <SectionTitle>O mnie</SectionTitle>
-            <Paragraph margin={`0 0 ${spaces.md} 0`}>
-              Tworzenie oprogramowania to moja pasja, którą z przyjemnością
-              rozwijam każdego dnia poprzez budowanie aplikacji oraz naukę
-              nowych technologii.
-            </Paragraph>
-            <Paragraph>
-              Specjalizuję się w technologiach front-endowych, jednak w trakcie
-              tworzenia aplikacji poznałem również technologie back-endowe oraz
-              dobre praktyki związane z UI / UX
-            </Paragraph>
-          </Content>
-        </Section>
+        <About />
         <Section id="skills">
           <Content>
             <SectionTitle>Umiejętności</SectionTitle>
