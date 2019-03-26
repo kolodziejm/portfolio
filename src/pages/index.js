@@ -52,6 +52,8 @@ import Project from '../components/ui/Project';
 import Input from '../components/ui/Input';
 import Textarea from '../components/ui/Textarea';
 import Form from '../components/ui/Form';
+import SmallHeading from "../components/typography/SmallHeading";
+import Footer from '../components/sections/Footer';
 
 const HeaderContent = styled.div`
   position: absolute;
@@ -73,7 +75,6 @@ const IndexPage = () => {
       email,
       message
     };
-
     fetch(firebaseURI, {
       method: 'POST',
       headers: {
@@ -217,7 +218,10 @@ const IndexPage = () => {
         <Section id="contact">
           <Content>
             <SectionTitle>Skontaktuj się ze mną</SectionTitle>
-            <Form onSubmit={sendMessage} maxWidth="64rem">
+            <Form 
+            onSubmit={sendMessage} 
+            maxWidth="64rem"
+            margin={`0 auto ${spaces.xl} auto`}>
               <Label 
               margin={`0 0 ${spaces.xs} 0`} 
               htmlFor="email">Twój email</Label>
@@ -241,9 +245,20 @@ const IndexPage = () => {
               margin={`0 0 ${spaces.sm} 0`} />
               <Button type="submit" width="100%" >Wyślij</Button>
             </Form>
+            <MediumHeading 
+            align="center"
+            margin={`0 0 ${spaces.xs} 0`}>Mój email</MediumHeading>
+            <a 
+            href="mailto:markolo.dev@gmail.com" 
+            style={{ textDecoration: 'none', textAlign: 'center' }}>
+              <MediumHeading>
+                <Colorize color="primary">markolo.dev@gmail.com</Colorize>
+              </MediumHeading>
+            </a>
           </Content>
         </Section>
       </Main>
+      <Footer />
     </Layout>
   )
 }

@@ -40,7 +40,7 @@ export default ({ title, img, frontendTech = [], backendTech = [], github, live 
     <BigCard maxWidth="45rem">
       <Image src={img} alt={title}/>
       <MediumHeading align="center" margin="0 0 8px 0" >{title}</MediumHeading>
-      <Divider margin="0 auto 16px auto" />
+      <Divider margin="0 auto 24px auto" />
       {frontendTech.length ? (
         <Container>
           <SmallHeading margin="0 0 8px 0">Front-end</SmallHeading>
