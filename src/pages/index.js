@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import theme from "../theme"
+import firebaseURI from '../config/firebase';
 
 import logoImg from '../images/MK.png';
 import jsIcon from '../images/js.svg';
@@ -63,6 +64,26 @@ const { spaces, borderRadiuses } = theme
 
 const IndexPage = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const sendMessage = e => {
+    e.preventDefault();
+    const data = {
+      email,
+      message
+    };
+
+    fetch(firebaseURI, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
 
   return (
     <Layout>
@@ -196,11 +217,28 @@ const IndexPage = () => {
         <Section id="contact">
           <Content>
             <SectionTitle>Skontaktuj się ze mną</SectionTitle>
-            <Form action="POST" maxWidth="64rem">
-              <Label margin={`0 0 ${spaces.xs} 0`} htmlFor="email">Twój email</Label>
-              <Input type="email" name="email" id="email" margin={`0 0 ${spaces.md} 0`} />
-              <Label margin={`0 0 ${spaces.xs} 0`} htmlFor="message">Wiadomość</Label>
-              <Textarea id="message" name="message" margin={`0 0 ${spaces.sm} 0`} />
+            <Form onSubmit={sendMessage} maxWidth="64rem">
+              <Label 
+              margin={`0 0 ${spaces.xs} 0`} 
+              htmlFor="email">Twój email</Label>
+              <Input 
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+              type="email" 
+              name="email" 
+              id="email" 
+              margin={`0 0 ${spaces.md} 0`} />
+              <Label 
+              margin={`0 0 ${spaces.xs} 0`} 
+              htmlFor="message">Wiadomość</Label>
+              <Textarea 
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+              required 
+              id="message" 
+              name="message" 
+              margin={`0 0 ${spaces.sm} 0`} />
               <Button type="submit" width="100%" >Wyślij</Button>
             </Form>
           </Content>

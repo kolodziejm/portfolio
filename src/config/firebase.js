@@ -1,0 +1,1 @@
+export default 'https://portfolio-80ba2.firebaseio.com/messages.json';
