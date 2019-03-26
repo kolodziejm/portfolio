@@ -54,6 +54,7 @@ import Textarea from '../components/ui/Textarea';
 import Form from '../components/ui/Form';
 import SmallHeading from "../components/typography/SmallHeading";
 import Footer from '../components/sections/Footer';
+import Contact from "../components/sections/Contact";
 
 const HeaderContent = styled.div`
   position: absolute;
@@ -66,25 +67,25 @@ const { spaces, borderRadiuses } = theme
 
 const IndexPage = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [message, setMessage] = useState('');
 
-  const sendMessage = e => {
-    e.preventDefault();
-    const data = {
-      email,
-      message
-    };
-    fetch(firebaseURI, {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
-  }
+  // const sendMessage = e => {
+  //   e.preventDefault();
+  //   const data = {
+  //     email,
+  //     message
+  //   };
+  //   fetch(firebaseURI, {
+  //     method: 'POST',
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify(data)
+  //   })
+  //     .then(res => console.log(res))
+  //     .catch(err => console.log(err))
+  // }
 
   return (
     <Layout>
@@ -215,48 +216,7 @@ const IndexPage = () => {
             />
           </Content>
         </Section>
-        <Section id="contact">
-          <Content>
-            <SectionTitle>Skontaktuj się ze mną</SectionTitle>
-            <Form 
-            onSubmit={sendMessage} 
-            maxWidth="64rem"
-            margin={`0 auto ${spaces.xl} auto`}>
-              <Label 
-              margin={`0 0 ${spaces.xs} 0`} 
-              htmlFor="email">Twój email</Label>
-              <Input 
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              required
-              type="email" 
-              name="email" 
-              id="email" 
-              margin={`0 0 ${spaces.md} 0`} />
-              <Label 
-              margin={`0 0 ${spaces.xs} 0`} 
-              htmlFor="message">Wiadomość</Label>
-              <Textarea 
-              value={message}
-              onChange={e => setMessage(e.target.value)}
-              required 
-              id="message" 
-              name="message" 
-              margin={`0 0 ${spaces.sm} 0`} />
-              <Button type="submit" width="100%" >Wyślij</Button>
-            </Form>
-            <MediumHeading 
-            align="center"
-            margin={`0 0 ${spaces.xs} 0`}>Mój email</MediumHeading>
-              <MediumHeading align="center">
-              <a 
-              href="mailto:markolo.dev@gmail.com" 
-              style={{ textDecoration: 'none', textAlign: 'center' }}>
-                <Colorize color="primary">markolo.dev@gmail.com</Colorize>
-              </a>
-              </MediumHeading>
-          </Content>
-        </Section>
+        <Contact />
       </Main>
       <Footer />
     </Layout>
