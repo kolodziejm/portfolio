@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export default styled.label`
   font-family: ${({ theme: { fonts } }) => fonts.heading};
@@ -7,4 +7,4 @@ export default styled.label`
   color: ${({ theme: { colors } }) => colors.black};
   margin: ${({ margin }) => margin};
   display: block;
-`;
+`

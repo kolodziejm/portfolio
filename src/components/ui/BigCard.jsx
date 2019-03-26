@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export default styled.li`
   list-style: none;
@@ -6,4 +6,4 @@ export default styled.li`
   border-radius: ${({ theme: { borderRadiuses } }) => borderRadiuses.lg};
   padding: ${({ theme: { spaces } }) => `${spaces.md} ${spaces.sm}`};
   max-width: ${({ maxWidth }) => maxWidth};
-`;
+`

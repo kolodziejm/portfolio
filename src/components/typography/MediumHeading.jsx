@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export default styled.h4`
-   font-family: ${({ theme: { fonts } }) => fonts.heading};
+  font-family: ${({ theme: { fonts } }) => fonts.heading};
   font-size: ${({ theme: { fontSizes } }) => fontSizes.md};
   font-weight: bold;
   color: ${({ theme: { colors } }) => colors.black};
@@ -14,4 +14,4 @@ export default styled.h4`
     }
   }};
   margin: ${({ margin }) => margin};
-`;
+`
