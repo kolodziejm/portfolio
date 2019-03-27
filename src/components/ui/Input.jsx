@@ -4,7 +4,12 @@ export default styled.input`
   margin: ${({ margin }) => margin};
   width: ${({ width }) => (width ? width : "100%")};
   border-radius: ${({ theme: { borderRadiuses } }) => borderRadiuses.md};
-  border: 1px solid ${({ theme: { colors } }) => colors.shadow};
+  border: 1px solid
+    ${({ theme: { colors }, success, error }) => {
+      if (success) return colors.success
+      if (error) return colors.error
+      return colors.shadow
+    }};
   font-size: ${({ theme: { fontSizes } }) => fontSizes.sm};
   color: ${({ theme: { colors } }) => colors.body};
   font-family: ${({ theme: { fonts } }) => fonts.body};
@@ -16,5 +21,10 @@ export default styled.input`
   &:focus {
     outline: none;
     border: 1px solid ${({ theme: { colors } }) => colors.primary};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: ${({ theme: { colors } }) => colors.white};
   }
 `

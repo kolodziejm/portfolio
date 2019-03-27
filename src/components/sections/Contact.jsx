@@ -13,15 +13,28 @@ import Textarea from "../ui/Textarea"
 import firebaseURI from "../../config/firebase"
 import { Button } from "../ui/Button"
 import Paragraph from "../typography/Paragraph"
+import { ClipLoader } from "react-spinners"
 
 const Contact = ({ theme, lang }) => {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
+  const [errObj, setErrObj] = useState({})
+  const [loading, setLoading] = useState(false)
 
   const sendMessage = e => {
     e.preventDefault()
+    const errors = {}
+    if (!email)
+      errors.email = "Podaj swój adres email, abym mógł Ci odpowiedzieć"
+    if (!message) errors.message = "Pole wiadomości jest wymagane"
+    const validateErrors =
+      Object.entries(errors).length === 0 && errors.constructor === Object
+    if (!validateErrors) return setErrObj(errors)
+
+    setErrObj({})
+    setLoading(true)
     const data = {
       email,
       message,
@@ -35,15 +48,21 @@ const Contact = ({ theme, lang }) => {
       body: JSON.stringify(data),
     })
       .then(res => {
-        console.log(res)
+        setLoading(false)
         setSuccess(true)
         setEmail("")
         setMessage("")
       })
-      .catch(err => console.error(err))
+      .catch(err => {
+        setLoading(false)
+        console.error(err)
+        setError(true)
+      })
   }
 
   const { spaces, colors } = theme
+
+  console.log(errObj)
 
   return (
     <Section id="contact">
@@ -72,25 +91,41 @@ const Contact = ({ theme, lang }) => {
           <Input
             value={email}
             onChange={e => setEmail(e.target.value)}
-            required
             type="email"
             name="email"
             id="email"
-            margin={`0 0 ${spaces.md} 0`}
+            margin={`0 0 ${spaces.xs} 0`}
+            error={error || errObj.email}
+            success={success}
+            disabled={success}
           />
+          <Paragraph margin={`0 0 ${spaces.md} 0`}>
+            <Colorize color="error">{errObj.email && errObj.email}</Colorize>
+          </Paragraph>
           <Label margin={`0 0 ${spaces.xs} 0`} htmlFor="message">
             Wiadomość
           </Label>
           <Textarea
             value={message}
             onChange={e => setMessage(e.target.value)}
-            required
             id="message"
             name="message"
-            margin={`0 0 ${spaces.sm} 0`}
+            margin={`0 0 ${spaces.xs} 0`}
+            error={error || errObj.message}
+            success={success}
+            disabled={success}
           />
-          <Button type="submit" width="100%">
-            Wyślij
+          <Paragraph margin={`0 0 ${spaces.sm} 0`}>
+            <Colorize color="error">
+              {errObj.message && errObj.message}
+            </Colorize>
+          </Paragraph>
+          <Button disabled={success || loading} type="submit" width="100%">
+            {loading ? (
+              <ClipLoader loading={loading} size={20} color={colors.primary} />
+            ) : (
+              "Wyślij"
+            )}
           </Button>
         </Form>
         <MediumHeading align="center" margin={`0 0 ${spaces.xs} 0`}>
