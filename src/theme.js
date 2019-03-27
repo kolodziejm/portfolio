@@ -8,6 +8,10 @@ export default {
     light: "#FAFAFA",
     shadow: "#BEBEBE",
     body: "#555",
+    error: "#F63E02",
+    errorText: "#6B0504",
+    success: "#38A700",
+    successText: "#386C0B",
   },
   fonts: {
     heading: "Montserrat, sans-serif",

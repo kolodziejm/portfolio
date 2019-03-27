@@ -12,16 +12,20 @@ import Colorize from "../helpers/Colorize"
 import Textarea from "../ui/Textarea"
 import firebaseURI from "../../config/firebase"
 import { Button } from "../ui/Button"
+import Paragraph from "../typography/Paragraph"
 
 const Contact = ({ theme, lang }) => {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(false)
 
   const sendMessage = e => {
     e.preventDefault()
     const data = {
       email,
       message,
+      data: new Date(),
     }
     fetch(firebaseURI, {
       method: "POST",
@@ -30,11 +34,16 @@ const Contact = ({ theme, lang }) => {
       },
       body: JSON.stringify(data),
     })
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+      .then(res => {
+        console.log(res)
+        setSuccess(true)
+        setEmail("")
+        setMessage("")
+      })
+      .catch(err => console.error(err))
   }
 
-  const { spaces } = theme
+  const { spaces, colors } = theme
 
   return (
     <Section id="contact">
@@ -45,6 +54,18 @@ const Contact = ({ theme, lang }) => {
           maxWidth="64rem"
           margin={`0 auto ${spaces.xl} auto`}
         >
+          <Paragraph center margin={`0 0 ${spaces.sm} 0`}>
+            {success ? (
+              <Colorize color="success">
+                Wiadomość wysłana. Odpowiem najszybciej jak to możliwe.
+              </Colorize>
+            ) : error ? (
+              <Colorize color="error">
+                Coś poszło nie tak. Skontaktuj się ze mną poprzez email podany
+                poniżej.
+              </Colorize>
+            ) : null}
+          </Paragraph>
           <Label margin={`0 0 ${spaces.xs} 0`} htmlFor="email">
             Twój email
           </Label>

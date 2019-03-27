@@ -5,6 +5,12 @@ export default styled.span`
     switch (color) {
       case "primary":
         return colors.primary
+
+      case "success":
+        return colors.successText
+
+      case "error":
+        return colors.errorText
     }
   }};
 `
