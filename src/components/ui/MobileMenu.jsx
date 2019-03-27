@@ -4,7 +4,7 @@ import posed, { PoseGroup } from "react-pose"
 
 import { HamburgerClose } from "./Hamburger"
 
-import logoImg from '../../images/MK.png';
+import logoImg from "../../images/MK.png"
 
 const navPoses = {
   enter: { x: "0%", opacity: 1, staggerChildren: 100 },
@@ -22,7 +22,7 @@ const backdropPoses = {
 }
 
 const Backdrop = styled(posed.div(backdropPoses))`
-  position: fixed !important;
+  position: fixed !important; /* override pose's default position absolute injection */
   top: 0;
   left: 0;
   width: 100vw;
@@ -101,4 +101,4 @@ const MobileMenu = ({ open, clicked, lang, theme: { borderRadiuses } }) => (
   </PoseGroup>
 )
 
-export default withTheme(MobileMenu);
+export default withTheme(MobileMenu)

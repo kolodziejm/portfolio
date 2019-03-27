@@ -7,6 +7,7 @@ import xIcon from "../../images/x.svg"
 
 const Button = styled.button`
   border: 0;
+  cursor: pointer;
   padding: 12px;
   border-radius: 50%;
   outline: none; /* mobile */

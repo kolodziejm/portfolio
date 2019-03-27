@@ -28,6 +28,8 @@ const Image = styled.img`
 export default ({ img, text, centerGrid, margin, flex }) => (
   <Item centerGrid={centerGrid} margin={margin} flex={flex}>
     <Image src={img} alt={`${text} icon`} />
-    <Paragraph small>{text}</Paragraph>
+    <Paragraph small center>
+      {text}
+    </Paragraph>
   </Item>
 )
