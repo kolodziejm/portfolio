@@ -6,4 +6,7 @@ export default styled.li`
   border-radius: ${({ theme: { borderRadiuses } }) => borderRadiuses.lg};
   padding: ${({ theme: { spaces } }) => `${spaces.md} ${spaces.sm}`};
   max-width: ${({ maxWidth }) => maxWidth};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `

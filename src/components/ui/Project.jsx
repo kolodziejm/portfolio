@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { withTheme } from "styled-components"
 
 import BigCard from "./BigCard"
 import MediumHeading from "../typography/MediumHeading"
@@ -25,7 +25,7 @@ const Container = styled.div`
 `
 
 const LinksContainer = styled.div`
-  margin-top: ${({ theme: { spaces } }) => spaces.xl};
+  margin-bottom: 0;
   display: flex;
   justify-content: center;
 `
@@ -36,64 +36,77 @@ const Image = styled.img`
   margin-bottom: ${({ theme: { spaces } }) => spaces.sm};
 `
 
-export default ({
+const Content = styled.div`
+  margin: 0 auto;
+`
+
+const Project = ({
   title,
   img,
   frontendTech = [],
   backendTech = [],
   github,
   live,
+  theme: { spaces },
 }) => (
-  <BigCard maxWidth="45rem">
-    <Image src={img} alt={title} />
-    <MediumHeading align="center" margin="0 0 8px 0">
-      {title}
-    </MediumHeading>
-    <Divider margin="0 auto 24px auto" />
-    {frontendTech.length ? (
-      <Container>
-        <SmallHeading margin="0 0 8px 0">Front-end</SmallHeading>
-        <TechList>
-          {frontendTech.map(name => (
-            <TechItem key={name}>
-              <Paragraph>{name}</Paragraph>
-            </TechItem>
-          ))}
-        </TechList>
-      </Container>
-    ) : null}
-    {backendTech.length ? (
-      <Container>
-        <SmallHeading margin="0 0 8px 0">Back-end</SmallHeading>
-        <TechList>
-          {backendTech.map(name => (
-            <TechItem key={name}>
-              <Paragraph>{name}</Paragraph>
-            </TechItem>
-          ))}
-        </TechList>
-      </Container>
-    ) : null}
+  <BigCard maxWidth="100%">
+    <Content>
+      <Image src={img} alt={title} />
+      <MediumHeading align="center" margin={`0 0 ${spaces.xs} 0`}>
+        {title}
+      </MediumHeading>
+      <Divider margin={`0 auto ${spaces.md} auto`} />
+      {frontendTech.length ? (
+        <Container>
+          <SmallHeading margin={`0 0 ${spaces.xs} 0`}>Front-end</SmallHeading>
+          <TechList>
+            {frontendTech.map(name => (
+              <TechItem key={name}>
+                <Paragraph>{name}</Paragraph>
+              </TechItem>
+            ))}
+          </TechList>
+        </Container>
+      ) : null}
+      {backendTech.length ? (
+        <Container>
+          <SmallHeading margin={`0 0 ${spaces.xs} 0`}>Back-end</SmallHeading>
+          <TechList>
+            {backendTech.map(name => (
+              <TechItem key={name}>
+                <Paragraph>{name}</Paragraph>
+              </TechItem>
+            ))}
+          </TechList>
+        </Container>
+      ) : null}
+    </Content>
     <LinksContainer>
-      <ButtonLink
-        rel="noopener"
-        target="_blank"
-        href={github}
-        flex="0 auto"
-        margin="0 16px 0 0"
-        width="12rem"
-      >
-        Github
-      </ButtonLink>
-      <ButtonLink
-        rel="noopener"
-        target="_blank"
-        href={live}
-        flex="0 auto"
-        width="12rem"
-      >
-        Live
-      </ButtonLink>
+      {github ? (
+        <ButtonLink
+          rel="noopener"
+          target="_blank"
+          href={github}
+          flex="0 auto"
+          margin={github && live ? `0 ${spaces.sm} 0 0` : 0}
+          width="12rem"
+        >
+          Github
+        </ButtonLink>
+      ) : null}
+      {live ? (
+        <ButtonLink
+          rel="noopener"
+          target="_blank"
+          href={live}
+          flex="0 auto"
+          width="12rem"
+        >
+          Live
+        </ButtonLink>
+      ) : null}
     </LinksContainer>
   </BigCard>
 )
+
+export default withTheme(Project)
