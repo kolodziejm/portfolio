@@ -27,8 +27,19 @@ const Contact = ({ theme, lang }) => {
     e.preventDefault()
     const errors = {}
     if (!email)
-      errors.email = "Podaj swój adres email, abym mógł Ci odpowiedzieć"
-    if (!message) errors.message = "Pole wiadomości jest wymagane"
+      errors.email =
+        lang === "pl"
+          ? "Podaj swój adres email, abym mógł Ci odpowiedzieć"
+          : lang === "en"
+          ? "Enter your email address, so I can respond to you"
+          : ""
+    if (!message)
+      errors.message =
+        lang === "pl"
+          ? "Pole wiadomości jest wymagane"
+          : lang === "en"
+          ? "Message field is required"
+          : ""
     const validateErrors =
       Object.entries(errors).length === 0 && errors.constructor === Object
     if (!validateErrors) return setErrObj(errors)
@@ -67,7 +78,13 @@ const Contact = ({ theme, lang }) => {
   return (
     <Section id="contact">
       <Content>
-        <SectionTitle>Skontaktuj się ze mną</SectionTitle>
+        <SectionTitle>
+          {lang === "pl"
+            ? "Skontaktuj się ze mną"
+            : lang === "en"
+            ? "Contact me"
+            : ""}
+        </SectionTitle>
         <Form
           onSubmit={sendMessage}
           maxWidth="64rem"
@@ -76,17 +93,24 @@ const Contact = ({ theme, lang }) => {
           <Paragraph center margin={`0 0 ${spaces.sm} 0`}>
             {success ? (
               <Colorize color="success">
-                Wiadomość wysłana. Odpowiem najszybciej jak to możliwe.
+                {lang === "pl"
+                  ? "Wiadomość wysłana. Odpowiem najszybciej jak to możliwe."
+                  : lang === "en"
+                  ? "Message sent. I'll answer as soon as possible."
+                  : ""}
               </Colorize>
             ) : error ? (
               <Colorize color="error">
-                Coś poszło nie tak. Skontaktuj się ze mną poprzez email podany
-                poniżej.
+                {lang === "pl"
+                  ? "Coś poszło nie tak. Skontaktuj się ze mną poprzez email podany poniżej."
+                  : lang === "en"
+                  ? "Something went wrong. Message me directly on email provided below."
+                  : ""}
               </Colorize>
             ) : null}
           </Paragraph>
           <Label margin={`0 0 ${spaces.xs} 0`} htmlFor="email">
-            Twój email
+            {lang === "pl" ? "Twój email" : lang === "en" ? "Your email" : ""}
           </Label>
           <Input
             value={email}
@@ -103,7 +127,7 @@ const Contact = ({ theme, lang }) => {
             <Colorize color="error">{errObj.email && errObj.email}</Colorize>
           </Paragraph>
           <Label margin={`0 0 ${spaces.xs} 0`} htmlFor="message">
-            Wiadomość
+            {lang === "pl" ? "Wiadomość" : lang === "en" ? "Message" : ""}
           </Label>
           <Textarea
             value={message}
@@ -123,13 +147,21 @@ const Contact = ({ theme, lang }) => {
           <Button disabled={success || loading} type="submit" width="100%">
             {loading ? (
               <ClipLoader loading={loading} size={20} color={colors.primary} />
-            ) : (
+            ) : lang === "pl" ? (
               "Wyślij"
+            ) : lang === "en" ? (
+              "Send"
+            ) : (
+              ""
             )}
           </Button>
         </Form>
         <MediumHeading align="center" margin={`0 0 ${spaces.xs} 0`}>
-          Mój email
+          {lang === "pl"
+            ? "Mój email"
+            : lang === "en"
+            ? "My email address"
+            : ""}
         </MediumHeading>
         <MediumHeading align="center">
           <a

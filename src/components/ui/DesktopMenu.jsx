@@ -82,7 +82,7 @@ const PLLinks = () => (
     <SmoothLink href="#skills">Umiejętności</SmoothLink>
     <SmoothLink href="#projects">Projekty</SmoothLink>
     <SmoothLink href="#contact">Kontakt</SmoothLink>
-    <StandardLink href="en">EN</StandardLink>
+    <StandardLink href="/en">EN</StandardLink>
   </>
 )
 
