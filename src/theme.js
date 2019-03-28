@@ -41,6 +41,7 @@ export default {
     xl: `${spacingUnit * 5}px`,
     xxl: `${spacingUnit * 6}px`,
     hg: `${spacingUnit * 8}px`,
+    gi: `${spacingUnit * 12}px`,
   },
   breakpoints: {
     tabPort: "37.5em", // 600px

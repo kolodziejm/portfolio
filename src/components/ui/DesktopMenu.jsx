@@ -64,17 +64,17 @@ const StandardLink = ({ href, children }) => (
   </NavItem>
 )
 
-const LogoLink = () => (
+const LogoLink = ({ borderRadiuses }) => (
   <SmoothAnchor href="#header">
-    <img width="40" height="40" src={logo} alt="Marcin Kołodziej logo" />
+    <img style={{ borderRadius: `${borderRadiuses.sm}` }} width="40" height="40" src={logo} alt="Marcin Kołodziej logo" />
   </SmoothAnchor>
 )
 
-const DesktopMenu = ({ lang, theme }) => {
+const DesktopMenu = ({ lang, theme: { borderRadiuses } }) => {
   return (
     <Navbar>
       <Content>
-        <LogoLink />
+        <LogoLink borderRadiuses={borderRadiuses} />
         <NavList>
           <SmoothLink href="#about">O mnie</SmoothLink>
           <SmoothLink href="#skills">Umiejętności</SmoothLink>
