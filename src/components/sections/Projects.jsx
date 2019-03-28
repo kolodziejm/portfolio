@@ -25,7 +25,10 @@ const Grid = styled.ul`
 const Projects = ({ theme, lang }) => (
   <Section id="projects">
     <Content>
-      <SectionTitle>Projekty</SectionTitle>
+      <SectionTitle>
+        {" "}
+        {lang === "pl" ? "Projekty" : lang === "en" ? "Projects" : ""}
+      </SectionTitle>
       <Grid>
         <Project
           title="Habit Creator"

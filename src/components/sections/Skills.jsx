@@ -27,7 +27,9 @@ import FlexList from "../lists/FlexList"
 const Skills = ({ theme: { spaces }, lang }) => (
   <Section id="skills">
     <Content>
-      <SectionTitle>Umiejętności</SectionTitle>
+      <SectionTitle>
+        {lang === "pl" ? "Umiejętności" : lang === "en" ? "Skills" : ""}
+      </SectionTitle>
       <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>
         Front-end
       </MediumHeading>
@@ -54,7 +56,11 @@ const Skills = ({ theme: { spaces }, lang }) => (
         </GridList>
       </Spacer>
       <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>
-        Kontrola wersji
+        {lang === "pl"
+          ? "Kontrola wersji"
+          : lang === "en"
+          ? "Version control"
+          : ""}
       </MediumHeading>
       <Spacer margin={`0 0 ${spaces.xl} 0`}>
         <ul style={{ listStyle: "none", width: "100%" }}>
@@ -62,7 +68,7 @@ const Skills = ({ theme: { spaces }, lang }) => (
         </ul>
       </Spacer>
       <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>
-        Testy
+        {lang === "pl" ? "Testy" : lang === "en" ? "Tests" : ""}
       </MediumHeading>
       <Spacer margin={`0 0 ${spaces.lg} 0`}>
         <FlexList>
