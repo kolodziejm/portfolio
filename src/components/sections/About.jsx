@@ -16,7 +16,7 @@ const PLContent = ({ spaces }) => (
     <Paragraph>
       Specjalizuję się w technologiach front-endowych, jednak w trakcie
       tworzenia aplikacji poznałem również technologie back-endowe oraz dobre
-      praktyki związane z UI / UX
+      praktyki związane z UI / UX.
     </Paragraph>
   </>
 )
