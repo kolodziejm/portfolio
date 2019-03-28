@@ -76,37 +76,35 @@ const LogoLink = ({ borderRadiuses }) => (
   </SmoothAnchor>
 )
 
-const DesktopMenu = ({ lang, theme: { borderRadiuses } }) => {
-  const PLLinks = () => (
-    <>
-      <SmoothLink href="#about">O mnie</SmoothLink>
-      <SmoothLink href="#skills">Umiejętności</SmoothLink>
-      <SmoothLink href="#projects">Projekty</SmoothLink>
-      <SmoothLink href="#contact">Kontakt</SmoothLink>
-      <StandardLink href="en">EN</StandardLink>
-    </>
-  )
+const PLLinks = () => (
+  <>
+    <SmoothLink href="#about">O mnie</SmoothLink>
+    <SmoothLink href="#skills">Umiejętności</SmoothLink>
+    <SmoothLink href="#projects">Projekty</SmoothLink>
+    <SmoothLink href="#contact">Kontakt</SmoothLink>
+    <StandardLink href="en">EN</StandardLink>
+  </>
+)
 
-  const ENLinks = () => (
-    <>
-      <SmoothLink href="#about">About me</SmoothLink>
-      <SmoothLink href="#skills">Skills</SmoothLink>
-      <SmoothLink href="#projects">Projects</SmoothLink>
-      <SmoothLink href="#contact">Contact</SmoothLink>
-      <StandardLink href="/">PL</StandardLink>
-    </>
-  )
+const ENLinks = () => (
+  <>
+    <SmoothLink href="#about">About me</SmoothLink>
+    <SmoothLink href="#skills">Skills</SmoothLink>
+    <SmoothLink href="#projects">Projects</SmoothLink>
+    <SmoothLink href="#contact">Contact</SmoothLink>
+    <StandardLink href="/">PL</StandardLink>
+  </>
+)
 
-  return (
-    <Navbar>
-      <Content>
-        <LogoLink borderRadiuses={borderRadiuses} />
-        <NavList>
-          {lang === "pl" ? <PLLinks /> : lang === "en" ? <ENLinks /> : ""}
-        </NavList>
-      </Content>
-    </Navbar>
-  )
-}
+const DesktopMenu = ({ lang, theme: { borderRadiuses } }) => (
+  <Navbar>
+    <Content>
+      <LogoLink borderRadiuses={borderRadiuses} />
+      <NavList>
+        {lang === "pl" ? <PLLinks /> : lang === "en" ? <ENLinks /> : ""}
+      </NavList>
+    </Content>
+  </Navbar>
+)
 
 export default withTheme(DesktopMenu)

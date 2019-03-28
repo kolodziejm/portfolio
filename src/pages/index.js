@@ -22,7 +22,11 @@ const IndexPage = () => {
         description="Strona portfolio full stack developera. Zobacz moją pracę!"
       />
       <DesktopMenu lang="pl" />
-      <MobileMenu open={menuOpen} clicked={() => setMenuOpen(false)} />
+      <MobileMenu
+        lang="pl"
+        open={menuOpen}
+        clicked={() => setMenuOpen(false)}
+      />
       <Header lang="pl" clicked={() => setMenuOpen(true)} />
       <Main lang="pl" />
       <Footer />
