@@ -55,7 +55,7 @@ const Projects = ({ theme, lang }) => (
           img={portfolio}
           frontendTech={["GatsbyJS", "React", "styled-components"]}
           backendTech={["Firebase"]}
-          github="https://github.com/kolodziejm/liteNote"
+          github="https://github.com/kolodziejm/portfolio"
         />
         <Project
           title="Challenge #37"
