@@ -66,7 +66,13 @@ const StandardLink = ({ href, children }) => (
 
 const LogoLink = ({ borderRadiuses }) => (
   <SmoothAnchor href="#header">
-    <img style={{ borderRadius: `${borderRadiuses.sm}` }} width="40" height="40" src={logo} alt="Marcin Kołodziej logo" />
+    <img
+      style={{ borderRadius: `${borderRadiuses.sm}` }}
+      width="40"
+      height="40"
+      src={logo}
+      alt="Marcin Kołodziej logo"
+    />
   </SmoothAnchor>
 )
 
