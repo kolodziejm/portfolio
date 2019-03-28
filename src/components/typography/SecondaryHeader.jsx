@@ -5,4 +5,9 @@ export default styled.h2`
   font-size: ${({ theme: { fontSizes } }) => fontSizes.lg};
   font-weight: 300;
   margin: ${({ margin }) => margin};
+
+  @media only screen and (min-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.tabPort}) {
+    font-size: ${({ theme: { fontSizes } }) => fontSizes.xl};
+  }
 `

@@ -11,7 +11,21 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 62.5%;
-      /* font-size: 75%; */
+
+    @media only screen and (min-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.tabPort}) {
+      font-size: 67.5%;
+    }
+
+    @media only screen and (min-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.tabLand}) {
+      font-size: 71%;
+    }
+
+    @media only screen and (min-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.desktop}) {
+      font-size: 75%;
+    }
   }
 
   body, #___gatsby {
