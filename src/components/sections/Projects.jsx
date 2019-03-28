@@ -6,6 +6,7 @@ import cahee from "../../images/cahee.png"
 import habitCreator from "../../images/habit-creator.png"
 import kolomar from "../../images/kolomar.png"
 import litenote from "../../images/litenote.png"
+import portfolio from "../../images/portfolio.png"
 
 import Section from "./Section"
 import Content from "../helpers/Content"
@@ -51,7 +52,7 @@ const Projects = ({ theme, lang }) => (
         />
         <Project
           title="Portfolio"
-          img={litenote}
+          img={portfolio}
           frontendTech={["GatsbyJS", "React", "styled-components"]}
           backendTech={["Firebase"]}
           github="https://github.com/kolodziejm/liteNote"
