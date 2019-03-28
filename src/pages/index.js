@@ -7,8 +7,8 @@ import Main from "../components/sections/Main"
 import MobileMenu from "../components/ui/MobileMenu"
 import Footer from "../components/sections/Footer"
 
-import Header from '../components/sections/Header';
-
+import Header from "../components/sections/Header"
+import DesktopMenu from "../components/ui/DesktopMenu"
 
 const IndexPage = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -20,6 +20,7 @@ const IndexPage = () => {
         lang="pl-PL"
         keywords={[`portfolio`, `Marcin Kołodziej`, "web", "developer"]}
       />
+      <DesktopMenu />
       <MobileMenu open={menuOpen} clicked={() => setMenuOpen(false)} />
       <Header clicked={() => setMenuOpen(true)} />
       <Main lang="pl" />

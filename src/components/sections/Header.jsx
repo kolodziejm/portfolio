@@ -5,7 +5,7 @@ import { HamburgerOpen } from "../ui/Hamburger"
 import HeaderGroup from "../helpers/HeaderGroup"
 import MainHeader from "../typography/MainHeader"
 import SecondaryHeader from "../typography/SecondaryHeader"
-import { ButtonLink } from "../ui/Button"
+import { ButtonSmoothLink } from "../ui/Button"
 import Colorize from "../helpers/Colorize"
 
 const Header = styled.header`
@@ -35,9 +35,14 @@ const HeaderSection = ({ clicked, theme: { spaces } }) => (
         </MainHeader>
         <SecondaryHeader>Web developer</SecondaryHeader>
       </HeaderGroup>
-      <ButtonLink margin="0 auto" width="24rem" href="#">
+      <ButtonSmoothLink
+        margin="0 auto"
+        width="24rem"
+        href="#projects"
+        offset="150"
+      >
         Moje projekty
-      </ButtonLink>
+      </ButtonSmoothLink>
     </HeaderContent>
   </Header>
 )

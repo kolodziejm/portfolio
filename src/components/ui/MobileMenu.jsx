@@ -32,6 +32,10 @@ const Backdrop = styled(posed.div(backdropPoses))`
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  @media only screen and (min-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.desktop}) {
+    display: none;
+  }
 `
 
 const Nav = styled(posed.nav(navPoses))`

@@ -18,6 +18,11 @@ const Button = styled.button`
   left: ${({ left }) => left};
   right: ${({ right }) => right};
   z-index: 2;
+
+  @media only screen and (min-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.desktop}) {
+    display: none;
+  }
 `
 
 const Line = styled.span`

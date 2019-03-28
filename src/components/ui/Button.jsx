@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components"
+import SmoothLink from "../helpers/SmoothAnchor"
 
 const buttonStyles = css`
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
@@ -35,4 +36,8 @@ export const Button = styled.button`
 export const ButtonLink = styled.a`
   ${buttonStyles};
   text-decoration: none;
+`
+
+export const ButtonSmoothLink = styled(SmoothLink)`
+  ${buttonStyles};
 `
