@@ -19,6 +19,7 @@ const IndexPage = () => {
         title="Marcin Kołodziej"
         lang="pl-PL"
         keywords={[`portfolio`, `Marcin Kołodziej`, "web", "developer"]}
+        description="Strona portfolio full stack developera. Zobacz moją pracę!"
       />
       <DesktopMenu />
       <MobileMenu open={menuOpen} clicked={() => setMenuOpen(false)} />
