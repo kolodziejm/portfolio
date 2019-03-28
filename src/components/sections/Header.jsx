@@ -23,7 +23,7 @@ const HeaderContent = styled.div`
   transform: translateX(-50%);
 `
 
-const HeaderSection = ({ clicked, theme: { spaces } }) => (
+const HeaderSection = ({ clicked, theme: { spaces }, lang }) => (
   <Header id="header">
     <HamburgerOpen clicked={clicked} />
     <HeaderContent>
@@ -41,7 +41,7 @@ const HeaderSection = ({ clicked, theme: { spaces } }) => (
         href="#projects"
         offset="150"
       >
-        Moje projekty
+        {lang === "pl" ? "Moje projekty" : lang === "en" ? "My projects" : ""}
       </ButtonSmoothLink>
     </HeaderContent>
   </Header>

@@ -23,7 +23,7 @@ const IndexPage = () => {
       />
       <DesktopMenu />
       <MobileMenu open={menuOpen} clicked={() => setMenuOpen(false)} />
-      <Header clicked={() => setMenuOpen(true)} />
+      <Header lang="pl" clicked={() => setMenuOpen(true)} />
       <Main lang="pl" />
       <Footer />
     </Layout>
