@@ -73,8 +73,6 @@ const Contact = ({ theme, lang }) => {
 
   const { spaces, colors } = theme
 
-  console.log(errObj)
-
   return (
     <Section id="contact">
       <Content>
