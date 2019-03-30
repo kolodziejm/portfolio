@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled, { withTheme } from "styled-components"
+import _ from "lodash"
 
 import { HamburgerOpen } from "../ui/Hamburger"
 import HeaderGroup from "../helpers/HeaderGroup"
@@ -28,28 +29,47 @@ const HeaderContent = styled.div`
   transform: translateX(-50%);
 `
 
-const HeaderSection = ({ clicked, theme: { spaces }, lang }) => (
-  <Header id="header">
-    <HamburgerOpen clicked={clicked} />
-    <HeaderContent>
-      <HeaderGroup margin={`0 0 ${spaces.lg} 0`}>
-        <MainHeader margin={`0 0 ${spaces.sm} 0`}>
-          Marcin
-          <br />
-          <Colorize color="primary">Kołodziej</Colorize>
-        </MainHeader>
-        <SecondaryHeader>Web developer</SecondaryHeader>
-      </HeaderGroup>
-      <ButtonSmoothLink
-        margin="0 auto"
-        width="24rem"
-        href="#projects"
-        offset="150"
-      >
-        {lang === "pl" ? "Moje projekty" : lang === "en" ? "My projects" : ""}
-      </ButtonSmoothLink>
-    </HeaderContent>
-  </Header>
-)
+const HeaderSection = ({ clicked, theme: { spaces }, lang }) => {
+  const [scrollPos, setScrollPos] = useState(0)
+
+  const scrollHandler = _.throttle(() => {
+    setScrollPos(window.scrollY)
+  }, 100)
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler)
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler)
+    }
+  }, [])
+
+  return (
+    <Header id="header">
+      <HamburgerOpen clicked={clicked} />
+      <HeaderContent>
+        <HeaderGroup
+          margin={`0 0 ${spaces.lg} 0`}
+          pose={scrollPos > 100 ? "scrolled" : "normal"}
+        >
+          <MainHeader margin={`0 0 ${spaces.sm} 0`}>
+            Marcin
+            <br />
+            <Colorize color="primary">Kołodziej</Colorize>
+          </MainHeader>
+          <SecondaryHeader>Web developer</SecondaryHeader>
+        </HeaderGroup>
+        <ButtonSmoothLink
+          margin="0 auto"
+          width="24rem"
+          href="#projects"
+          offset="150"
+        >
+          {lang === "pl" ? "Moje projekty" : lang === "en" ? "My projects" : ""}
+        </ButtonSmoothLink>
+      </HeaderContent>
+    </Header>
+  )
+}
 
 export default withTheme(HeaderSection)
