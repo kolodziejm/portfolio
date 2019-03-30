@@ -7,7 +7,7 @@ import SmoothAnchor from "../helpers/SmoothAnchor"
 import logo from "../../images/MK.png"
 
 const Content = styled.div`
-  max-width: 64rem;
+  max-width: 96rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
