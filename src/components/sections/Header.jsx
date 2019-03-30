@@ -14,11 +14,16 @@ const Header = styled.header`
   height: 100vh;
   min-height: 568px;
   position: relative;
+
+  @media only screen and (min-height: ${({ theme: { breakpoints } }) =>
+      breakpoints.height2k}) {
+    height: 65vh;
+  }
 `
 
 const HeaderContent = styled.div`
   position: absolute;
-  top: 20%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
 `

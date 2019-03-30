@@ -47,5 +47,7 @@ export default {
     tabPort: "37.5em", // 600px
     tabLand: "56.25em", // 900px
     desktop: "75em", // 1200px
+    height2k: "90em", // 1440px
+    width2k: "135em", // 2160px
   },
 }

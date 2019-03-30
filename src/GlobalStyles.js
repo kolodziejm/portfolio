@@ -26,6 +26,11 @@ const GlobalStyles = createGlobalStyle`
       breakpoints.desktop}) {
       font-size: 75%;
     }
+
+    @media only screen and (min-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.width2k}) {
+      font-size: 90.5%;
+    }
   }
 
   body, #___gatsby {
