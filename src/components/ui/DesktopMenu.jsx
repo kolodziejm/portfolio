@@ -44,6 +44,12 @@ const NavItem = styled.li`
 const StyledAnchor = styled(Link)`
   text-decoration: none;
   color: inherit;
+  transition: all 0.3s;
+  transition-timing-function: cubic-bezier(0.64, 0.49, 0.71, 1.08);
+
+  &:hover {
+    color: ${({ theme: { colors } }) => colors.primary};
+  }
 `
 
 const SmoothLink = ({ href, children }) => (
