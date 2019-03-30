@@ -7,7 +7,7 @@ import SmoothAnchor from "../helpers/SmoothAnchor"
 import logo from "../../images/MK.png"
 
 const Content = styled.div`
-  max-width: 96rem;
+  max-width: 112rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -15,7 +15,7 @@ const Content = styled.div`
 `
 
 const Navbar = styled.nav`
-  padding: ${({ theme: { spaces } }) => `${spaces.md} ${spaces.xs}`};
+  padding: ${({ theme: { spaces } }) => `${spaces.md} ${spaces.lg}`};
   box-shadow: 0 2px 4px ${({ theme: { colors } }) => colors.shadow};
   background: ${({ theme: { colors } }) => colors.white};
   position: fixed;
