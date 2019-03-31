@@ -1,10 +1,24 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
+import posed from "react-pose"
 import { Link } from "gatsby"
-import styled, { withTheme } from "styled-components"
+import styled from "styled-components"
+import _ from "lodash"
+
 import MediumHeading from "../typography/MediumHeading"
 import SmoothAnchor from "../helpers/SmoothAnchor"
 
 import logo from "../../images/MK.png"
+
+const PosedImage = posed.img({
+  normal: { scale: 1 },
+  scrolled: { scale: 0.8 },
+})
+
+const Logo = styled(PosedImage)`
+  border-radius: ${({ theme: { borderRadiuses } }) => borderRadiuses.sm};
+  width: 40px;
+  height: 40px;
+`
 
 const Content = styled.div`
   max-width: 120rem;
@@ -15,7 +29,10 @@ const Content = styled.div`
 `
 
 const Navbar = styled.nav`
-  padding: ${({ theme: { spaces } }) => `${spaces.md} ${spaces.lg}`};
+  padding: ${({ theme: { spaces }, scrollPos }) =>
+    scrollPos > 100
+      ? `${spaces.sm} ${spaces.lg}`
+      : `${spaces.md} ${spaces.lg}`};
   box-shadow: 0 2px 4px ${({ theme: { colors } }) => colors.shadow};
   background: ${({ theme: { colors } }) => colors.white};
   position: fixed;
@@ -23,6 +40,8 @@ const Navbar = styled.nav`
   display: none;
   z-index: 9999;
   border-top: 1px solid ${({ theme: { colors } }) => colors.primary};
+  transition: all 0.2s;
+  transition-timing-function: cubic-bezier(0.64, 0.49, 0.71, 1.08);
 
   @media only screen and (min-width: ${({ theme: { breakpoints } }) =>
       breakpoints.desktop}) {
@@ -52,9 +71,9 @@ const StyledAnchor = styled(Link)`
   }
 `
 
-const SmoothLink = ({ href, children }) => (
+const SmoothLink = ({ href, children, scrollPos }) => (
   <NavItem>
-    <MediumHeading>
+    <MediumHeading pose={scrollPos > 100 ? "scrolled" : "normal"}>
       <SmoothAnchor offset="150" href={href}>
         {children}
       </SmoothAnchor>
@@ -62,55 +81,95 @@ const SmoothLink = ({ href, children }) => (
   </NavItem>
 )
 
-const StandardLink = ({ href, children }) => (
+const StandardLink = ({ href, children, scrollPos }) => (
   <NavItem>
-    <MediumHeading>
+    <MediumHeading pose={scrollPos > 100 ? "scrolled" : "normal"}>
       <StyledAnchor to={href}>{children}</StyledAnchor>
     </MediumHeading>
   </NavItem>
 )
 
-const LogoLink = ({ borderRadiuses }) => (
+const LogoLink = ({ borderRadiuses, scrollPos }) => (
   <SmoothAnchor href="#header">
-    <img
-      style={{ borderRadius: `${borderRadiuses.sm}` }}
-      width="40"
-      height="40"
+    <Logo
+      pose={scrollPos > 100 ? "scrolled" : "normal"}
       src={logo}
       alt="Marcin Kołodziej logo"
     />
   </SmoothAnchor>
 )
 
-const PLLinks = () => (
+const PLLinks = ({ scrollPos }) => (
   <>
-    <SmoothLink href="#about">O mnie</SmoothLink>
-    <SmoothLink href="#skills">Umiejętności</SmoothLink>
-    <SmoothLink href="#projects">Projekty</SmoothLink>
-    <SmoothLink href="#contact">Kontakt</SmoothLink>
-    <StandardLink href="/en">EN</StandardLink>
+    <SmoothLink scrollPos={scrollPos} href="#about">
+      O mnie
+    </SmoothLink>
+    <SmoothLink scrollPos={scrollPos} href="#skills">
+      Umiejętności
+    </SmoothLink>
+    <SmoothLink scrollPos={scrollPos} href="#projects">
+      Projekty
+    </SmoothLink>
+    <SmoothLink scrollPos={scrollPos} href="#contact">
+      Kontakt
+    </SmoothLink>
+    <StandardLink scrollPos={scrollPos} href="/en">
+      EN
+    </StandardLink>
   </>
 )
 
-const ENLinks = () => (
+const ENLinks = ({ scrollPos }) => (
   <>
-    <SmoothLink href="#about">About me</SmoothLink>
-    <SmoothLink href="#skills">Skills</SmoothLink>
-    <SmoothLink href="#projects">Projects</SmoothLink>
-    <SmoothLink href="#contact">Contact</SmoothLink>
-    <StandardLink href="/">PL</StandardLink>
+    <SmoothLink scrollPos={scrollPos} href="#about">
+      About me
+    </SmoothLink>
+    <SmoothLink scrollPos={scrollPos} href="#skills">
+      Skills
+    </SmoothLink>
+    <SmoothLink scrollPos={scrollPos} href="#projects">
+      Projects
+    </SmoothLink>
+    <SmoothLink scrollPos={scrollPos} href="#contact">
+      Contact
+    </SmoothLink>
+    <StandardLink scrollPos={scrollPos} href="/">
+      PL
+    </StandardLink>
   </>
 )
 
-const DesktopMenu = ({ lang, theme: { borderRadiuses } }) => (
-  <Navbar>
-    <Content>
-      <LogoLink borderRadiuses={borderRadiuses} />
-      <NavList>
-        {lang === "pl" ? <PLLinks /> : lang === "en" ? <ENLinks /> : ""}
-      </NavList>
-    </Content>
-  </Navbar>
-)
+const DesktopMenu = ({ lang }) => {
+  const [scrollPos, setScrollPos] = useState(0)
 
-export default withTheme(DesktopMenu)
+  const scrollHandler = _.throttle(() => {
+    setScrollPos(window.scrollY)
+  }, 100)
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler)
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler)
+    }
+  }, [])
+
+  return (
+    <Navbar scrollPos={scrollPos}>
+      <Content>
+        <LogoLink scrollPos={scrollPos} />
+        <NavList>
+          {lang === "pl" ? (
+            <PLLinks scrollPos={scrollPos} />
+          ) : lang === "en" ? (
+            <ENLinks scrollPos={scrollPos} />
+          ) : (
+            ""
+          )}
+        </NavList>
+      </Content>
+    </Navbar>
+  )
+}
+
+export default DesktopMenu
