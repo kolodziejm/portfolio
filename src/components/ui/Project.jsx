@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { withTheme } from "styled-components"
+import Img from "gatsby-image"
 
 import BigCard from "./BigCard"
 import MediumHeading from "../typography/MediumHeading"
@@ -30,14 +31,11 @@ const LinksContainer = styled.div`
   justify-content: center;
 `
 
-const Image = styled.img`
-  width: 100%;
-  border-radius: ${({ theme: { borderRadiuses } }) => borderRadiuses.md};
-  margin-bottom: ${({ theme: { spaces } }) => spaces.sm};
-`
-
-const Content = styled.div`
-  margin: 0 auto;
+const Image = styled(Img)`
+  width: 100% !important;
+  border-radius: ${({ theme: { borderRadiuses } }) =>
+    borderRadiuses.md} !important;
+  margin-bottom: ${({ theme: { spaces } }) => spaces.sm} !important;
 `
 
 const Project = ({
@@ -50,8 +48,8 @@ const Project = ({
   theme: { spaces },
 }) => (
   <BigCard maxWidth="100%">
-    <Content>
-      <Image src={img} alt={title} />
+    <>
+      <Image style={{}} fluid={img} alt={title} />
       <MediumHeading align="center" margin={`0 0 ${spaces.xs} 0`}>
         {title}
       </MediumHeading>
@@ -80,7 +78,7 @@ const Project = ({
           </TechList>
         </Container>
       ) : null}
-    </Content>
+    </>
     <LinksContainer>
       {github ? (
         <ButtonLink
