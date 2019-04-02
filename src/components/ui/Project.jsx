@@ -32,11 +32,13 @@ const LinksContainer = styled.div`
 `
 
 const Image = styled(Img)`
-  width: 100% !important;
+  width: 100%;
   border-radius: ${({ theme: { borderRadiuses } }) =>
     borderRadiuses.md} !important;
   margin-bottom: ${({ theme: { spaces } }) => spaces.sm} !important;
 `
+
+const Content = styled.div``
 
 const Project = ({
   title,
@@ -48,8 +50,8 @@ const Project = ({
   theme: { spaces },
 }) => (
   <BigCard maxWidth="100%">
-    <>
-      <Image style={{}} fluid={img} alt={title} />
+    <Content>
+      <Image fluid={img} alt={title} />
       <MediumHeading align="center" margin={`0 0 ${spaces.xs} 0`}>
         {title}
       </MediumHeading>
@@ -78,7 +80,7 @@ const Project = ({
           </TechList>
         </Container>
       ) : null}
-    </>
+    </Content>
     <LinksContainer>
       {github ? (
         <ButtonLink
