@@ -1,3 +1,5 @@
 # Portfolio site of Marcin Kołodziej.
 
-### Check out my work!
+### Made using GatsbyJS and styled-components. Designed and prototyped in Adobe XD. 
+
+#### Check out my work!
