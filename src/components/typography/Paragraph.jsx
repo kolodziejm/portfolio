@@ -5,4 +5,5 @@ export default styled.p`
     small ? fontSizes.xs : fontSizes.sm};
   margin: ${({ margin }) => margin};
   text-align: ${({ center }) => (center ? "center" : "left")};
+  max-width: 960px;
 `

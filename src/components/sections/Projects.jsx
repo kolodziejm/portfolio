@@ -18,7 +18,7 @@ const Grid = styled.ul`
   list-style: none;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 32rem));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 28rem));
   grid-gap: ${({ theme: { spaces } }) => spaces.lg};
   justify-content: center;
 `
