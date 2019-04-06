@@ -1,5 +1,5 @@
 import React from "react"
-import { withTheme } from "styled-components"
+import styled, { withTheme } from "styled-components"
 
 import jsIcon from "../../images/js.svg"
 import css3Icon from "../../images/css3.svg"
@@ -24,62 +24,66 @@ import GridList from "../lists/GridList"
 import SmallCard from "../ui/SmallCard"
 import FlexList from "../lists/FlexList"
 
+const SkillsList = styled.ul`
+  list-style: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+`
+
 const Skills = ({ theme: { spaces }, lang }) => (
   <Section id="skills">
     <Content>
       <SectionTitle>
         {lang === "pl" ? "Umiejętności" : lang === "en" ? "Skills" : ""}
       </SectionTitle>
-      <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>
+      <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>
         Front-end
       </MediumHeading>
-      <Spacer margin={`0 0 ${spaces.xl} 0`}>
-        <GridList columns={3} rows={3} minWidth="5rem" maxWidth="8rem">
+      <Spacer margin={`0 0 ${spaces.hg} 0`}>
+        <SkillsList>
           <SmallCard img={jsIcon} text="JavaScript ES6+" />
           <SmallCard img={reactIcon} text="React" />
           <SmallCard img={reduxIcon} text="Redux" />
           <SmallCard img={html5Icon} text="HTML5" />
           <SmallCard img={css3Icon} text="CSS3" />
           <SmallCard img={sassIcon} text="Sass" />
-          <SmallCard img={graphqlIcon} text="GraphQL" centerGrid />
-        </GridList>
+          <SmallCard img={graphqlIcon} text="GraphQL" />
+        </SkillsList>
       </Spacer>
-      <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>
+      <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>
         Back-end
       </MediumHeading>
-      <Spacer margin={`0 0 ${spaces.xl} 0`}>
-        <GridList columns={3} rows={2} minWidth="5rem" maxWidth="8rem">
+      <Spacer margin={`0 0 ${spaces.hg} 0`}>
+        <SkillsList>
           <SmallCard img={nodeIcon} text="Node.js" />
           <SmallCard img={mongodbIcon} text="MongoDB" />
           <SmallCard img={graphqlIcon} text="GraphQL" />
-          <SmallCard img={firebaseIcon} text="Firebase" centerGrid />
-        </GridList>
+          <SmallCard img={firebaseIcon} text="Firebase" />
+        </SkillsList>
       </Spacer>
-      <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>
+      <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>
         {lang === "pl"
           ? "Kontrola wersji"
           : lang === "en"
           ? "Version control"
           : ""}
       </MediumHeading>
-      <Spacer margin={`0 0 ${spaces.xl} 0`}>
-        <ul style={{ listStyle: "none", width: "100%" }}>
-          <SmallCard img={gitIcon} text="Git" margin="0 auto" />
-        </ul>
+      <Spacer margin={`0 0 ${spaces.hg} 0`}>
+        <SkillsList>
+          <SmallCard img={gitIcon} text="Git" />
+        </SkillsList>
       </Spacer>
-      <MediumHeading align="center" margin={`0 0 ${spaces.md} 0`}>
+      <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>
         {lang === "pl" ? "Testy" : lang === "en" ? "Tests" : ""}
       </MediumHeading>
       <Spacer margin={`0 0 ${spaces.lg} 0`}>
-        <FlexList>
-          <SmallCard
-            img={jestIcon}
-            text="Jest"
-            flex="auto"
-            margin={`0 ${spaces.sm} 0 0 `}
-          />
-          <SmallCard img={rtlIcon} text="RTL" flex="auto" />
-        </FlexList>
+        <SkillsList>
+          <SmallCard img={jestIcon} text="Jest" />
+          <SmallCard img={rtlIcon} text="RTL" />
+        </SkillsList>
       </Spacer>
     </Content>
   </Section>
