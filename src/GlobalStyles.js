@@ -54,7 +54,7 @@ const GlobalStyles = createGlobalStyle`
   ::-webkit-scrollbar {
     height: 16px;
     width: 16px;
-    background: ${({ theme: { colors } }) => colors.shadow};
+    background: ${({ theme: { colors } }) => colors.light};
 }
 
 ::-webkit-scrollbar-thumb {
