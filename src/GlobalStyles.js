@@ -11,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 62.5%;
+    height: 100%;
 
     @media only screen and (min-width: ${({ theme: { breakpoints } }) =>
       breakpoints.tabPort}) {
