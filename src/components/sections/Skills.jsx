@@ -20,9 +20,7 @@ import Content from "../helpers/Content"
 import SectionTitle from "../typography/SectionTitle"
 import MediumHeading from "../typography/MediumHeading"
 import Spacer from "../helpers/Spacer"
-import GridList from "../lists/GridList"
 import SmallCard from "../ui/SmallCard"
-import FlexList from "../lists/FlexList"
 
 const SkillsList = styled.ul`
   list-style: none;

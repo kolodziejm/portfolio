@@ -142,9 +142,18 @@ const Contact = ({ theme, lang }) => {
               {errObj.message && errObj.message}
             </Colorize>
           </Paragraph>
-          <Button disabled={success || loading} type="submit" width="100%">
+          <Button
+            primary
+            disabled={success || loading}
+            type="submit"
+            width="100%"
+          >
             {loading ? (
-              <ClipLoader loading={loading} size={20} color={colors.primary} />
+              <ClipLoader
+                loading={loading}
+                size={20}
+                color={loading ? colors.primary : colors.white}
+              />
             ) : lang === "pl" ? (
               "Wyślij"
             ) : lang === "en" ? (

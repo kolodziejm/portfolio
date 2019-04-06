@@ -8,9 +8,10 @@ const buttonStyles = css`
   margin: ${({ margin }) => margin};
   flex: ${({ flex }) => flex};
   display: block;
-  background: ${({ theme: { colors } }) => colors.white};
-  color: ${({ theme: { colors }, disabled }) =>
-    disabled ? colors.body : colors.primary};
+  background: ${({ theme: { colors }, disabled, primary }) =>
+    disabled ? colors.white : primary ? colors.primary : colors.white};
+  color: ${({ theme: { colors }, disabled, primary }) =>
+    disabled ? colors.body : primary ? colors.white : colors.primary};
   border: 1px solid
     ${({ theme: { colors }, disabled }) =>
       disabled ? colors.shadow : colors.primary};
