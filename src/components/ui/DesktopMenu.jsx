@@ -21,7 +21,7 @@ const Logo = styled(PosedImage)`
 `
 
 const Content = styled.div`
-  max-width: 120rem;
+  max-width: 128rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

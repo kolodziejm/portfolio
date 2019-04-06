@@ -37,7 +37,7 @@ const ENContent = ({ spaces }) => (
 )
 
 const About = ({ theme: { spaces }, lang }) => (
-  <Section id="about" marginTop={spaces.lg}>
+  <Section id="about" marginTop={spaces.xl}>
     <Content>
       {lang === "pl" ? (
         <PLContent spaces={spaces} />
