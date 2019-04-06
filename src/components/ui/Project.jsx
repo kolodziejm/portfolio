@@ -51,7 +51,9 @@ const Project = ({
 }) => (
   <BigCard maxWidth="100%">
     <Content>
-      <Image fluid={img} alt={title} />
+      <a href={live} rel="noopener" target="_blank">
+        <Image fluid={img} alt={title} />
+      </a>
       <MediumHeading align="center" margin={`0 0 ${spaces.xs} 0`}>
         {title}
       </MediumHeading>
