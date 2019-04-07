@@ -40,7 +40,7 @@ const Skills = ({ theme: { spaces }, lang }) => (
       <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>
         Front-end
       </MediumHeading>
-      <Spacer margin={`0 0 ${spaces.hg} 0`}>
+      <Spacer margin={`0 0 ${spaces.xl} 0`}>
         <SkillsList>
           <SmallCard img={jsIcon} text="JavaScript ES6+" />
           <SmallCard img={reactIcon} text="React" />
@@ -54,7 +54,7 @@ const Skills = ({ theme: { spaces }, lang }) => (
       <MediumHeading align="center" margin={`0 0 ${spaces.sm} 0`}>
         Back-end
       </MediumHeading>
-      <Spacer margin={`0 0 ${spaces.hg} 0`}>
+      <Spacer margin={`0 0 ${spaces.xl} 0`}>
         <SkillsList>
           <SmallCard img={nodeIcon} text="Node.js" />
           <SmallCard img={mongodbIcon} text="MongoDB" />
@@ -69,7 +69,7 @@ const Skills = ({ theme: { spaces }, lang }) => (
           ? "Version control"
           : ""}
       </MediumHeading>
-      <Spacer margin={`0 0 ${spaces.hg} 0`}>
+      <Spacer margin={`0 0 ${spaces.xl} 0`}>
         <SkillsList>
           <SmallCard img={gitIcon} text="Git" />
         </SkillsList>
