@@ -47,11 +47,6 @@ const Anchor = styled.a`
   text-decoration: none;
 `
 
-const FreepikAnchor = styled(Anchor)`
-  font-size: 0.9rem;
-  color: ${({ theme: { colors } }) => colors.primary};
-`
-
 const Link = ({ href, src, alt, margin }) => (
   <SocialItem margin={margin}>
     <Anchor href={href} target="_blank" rel="noopener">
@@ -75,17 +70,8 @@ export default () => (
         alt="linkedIn"
       />
     </SocialList>
-    <span>
-      <Paragraph margin={`0 0 8px 0`}>
-        Copyright &copy; Marcin Kołodziej {new Date().getFullYear()}
-      </Paragraph>
-      <FreepikAnchor
-        target="_blank"
-        rel="noopener"
-        href="https://www.freepik.com/free-photos-vectors/background"
-      >
-        Background vector created by starline - www.freepik.com
-      </FreepikAnchor>
-    </span>
+    <Paragraph>
+      Copyright &copy; Marcin Kołodziej {new Date().getFullYear()}
+    </Paragraph>
   </Footer>
 )

@@ -8,7 +8,7 @@ import MainHeader from "../typography/MainHeader"
 import SecondaryHeader from "../typography/SecondaryHeader"
 import { ButtonSmoothLink } from "../ui/Button"
 import Colorize from "../helpers/Colorize"
-import background from "../../images/bg2.jpg"
+import background from "../../images/trianglify.svg"
 
 const Header = styled.header`
   text-align: center;
@@ -40,7 +40,7 @@ const HeaderSection = ({ clicked, theme: { spaces }, lang }) => {
           layers={[
             {
               image: background,
-              amount: 0.45,
+              amount: 0.24,
             },
           ]}
           style={{
