@@ -21,6 +21,7 @@ const Footer = styled.footer`
       breakpoints.tabPort}) {
     flex-direction: row-reverse;
     justify-content: space-between;
+    text-align: left;
   }
 `
 
@@ -49,7 +50,6 @@ const Anchor = styled.a`
 const FreepikAnchor = styled(Anchor)`
   font-size: 0.9rem;
   color: ${({ theme: { colors } }) => colors.primary};
-  text-align: center;
 `
 
 const Link = ({ href, src, alt, margin }) => (
