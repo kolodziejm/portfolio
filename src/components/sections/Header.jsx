@@ -12,11 +12,10 @@ import background from "../../images/trianglify.svg"
 
 const Header = styled.header`
   text-align: center;
-  padding: ${({ theme: { spaces } }) => spaces.xs};
   height: 100vh;
   min-height: 568px;
   position: relative;
-  /* background-color: ${({ theme: { colors } }) => colors.white}; */
+  background-color: ${({ theme: { colors } }) => colors.white};
 
   /* @media only screen and (min-height: ${({ theme: { breakpoints } }) =>
     breakpoints.height2k}) {
