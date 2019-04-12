@@ -30,9 +30,7 @@ const Content = styled.div`
 
 const Navbar = styled.nav`
   padding: ${({ theme: { spaces }, scrollPos }) =>
-    scrollPos > 100
-      ? `${spaces.sm} ${spaces.lg}`
-      : `${spaces.md} ${spaces.lg}`};
+    scrollPos > 100 ? `${spaces.sm} ${spaces.lg}` : `21px ${spaces.lg}`};
   box-shadow: 0 2px 4px ${({ theme: { colors } }) => colors.shadow};
   background: ${({ theme: { colors } }) => colors.white};
   position: fixed;
