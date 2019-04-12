@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import _ from "lodash"
 
-import MediumHeading from "../typography/MediumHeading"
+import NavHeading from "../typography/NavHeading"
 import SmoothAnchor from "../helpers/SmoothAnchor"
 
 import logo from "../../images/MK.png"
@@ -73,19 +73,19 @@ const StyledAnchor = styled(Link)`
 
 const SmoothLink = ({ href, children, scrollPos }) => (
   <NavItem>
-    <MediumHeading pose={scrollPos > 100 ? "scrolled" : "normal"}>
+    <NavHeading pose={scrollPos > 100 ? "scrolled" : "normal"}>
       <SmoothAnchor offset="150" href={href}>
         {children}
       </SmoothAnchor>
-    </MediumHeading>
+    </NavHeading>
   </NavItem>
 )
 
 const StandardLink = ({ href, children, scrollPos }) => (
   <NavItem>
-    <MediumHeading pose={scrollPos > 100 ? "scrolled" : "normal"}>
+    <NavHeading pose={scrollPos > 100 ? "scrolled" : "normal"}>
       <StyledAnchor to={href}>{children}</StyledAnchor>
-    </MediumHeading>
+    </NavHeading>
   </NavItem>
 )
 
