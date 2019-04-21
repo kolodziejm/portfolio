@@ -18,8 +18,8 @@ const buttonStyles = css`
   padding: ${({ theme: { spaces } }) => `${spaces.xs} 0`};
   border-radius: ${({ theme: { borderRadiuses } }) => borderRadiuses.md};
   font-size: ${({ theme: { fontSizes } }) => fontSizes.md};
-  transition: all 0.4s;
-  transition-timing-function: cubic-bezier(0.64, 0.49, 0.71, 1.08);
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   text-align: center;
 
   &:hover {

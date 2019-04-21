@@ -16,7 +16,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO
-        title="Marcin Kołodziej"
+        title="Marcin Kołodziej PL"
         lang="pl-PL"
         keywords={[`portfolio`, `Marcin Kołodziej`, "web", "developer"]}
         description="Strona portfolio full stack developera. Zobacz moją pracę!"
